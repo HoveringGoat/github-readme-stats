@@ -13,3 +13,4 @@ vercel_token
 *.code-workspace
 
 .vercel
+info.env
