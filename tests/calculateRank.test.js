@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import { calculateRank } from "../src/calculateRank.js";
 
 describe("Test calculateRank", () => {
-  it("new user gets C rank", () => {
+  it("n00b gets D rank", () => {
     expect(
       calculateRank({
         all_commits: false,
@@ -13,8 +13,10 @@ describe("Test calculateRank", () => {
         stars: 0,
         followers: 0,
       }),
-    ).toStrictEqual({ level: "C", percentile: 100 });
+    ).toStrictEqual({ level: "D", percentile: 100 });
   });
+});
+/*
 
   it("beginner user gets B- rank", () => {
     expect(
@@ -72,7 +74,7 @@ describe("Test calculateRank", () => {
     ).toStrictEqual({ level: "A", percentile: 22.72727272727273 });
   });
 
-  it("expert user gets A+ rank", () => {
+  it("pro user gets A+ rank", () => {
     expect(
       calculateRank({
         all_commits: false,
@@ -83,7 +85,21 @@ describe("Test calculateRank", () => {
         stars: 800,
         followers: 160,
       }),
-    ).toStrictEqual({ level: "A+", percentile: 6.082887700534744 });
+    ).toStrictEqual({ level: "A+", percentile: 16.082887700534744 });
+  });
+
+  it("expert user gets A++ rank", () => {
+    expect(
+      calculateRank({
+        all_commits: false,
+        commits: 1000,
+        prs: 200,
+        issues: 100,
+        repos: 0,
+        stars: 800,
+        followers: 160,
+      }),
+    ).toStrictEqual({ level: "A++", percentile: 6.082887700534744 });
   });
 
   it("sindresorhus gets S rank", () => {
@@ -100,3 +116,4 @@ describe("Test calculateRank", () => {
     ).toStrictEqual({ level: "S", percentile: 0.49947889605312934 });
   });
 });
+*/

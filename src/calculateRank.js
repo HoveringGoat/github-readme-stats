@@ -48,8 +48,8 @@ function calculateRank({
     STARS_WEIGHT +
     FOLLOWERS_WEIGHT;
 
-  const THRESHOLDS = [1, 6.75, 12.5, 25, 37.5, 50, 62.5, 70, 80, 100];
-  const LEVELS     = ["S", "A++", "A", "A-", "B+", "B", "B-", "C+", "C"];
+  const THRESHOLDS = [1, 6.75, 12.5, 25, 37.5, 50, 62.5, 70, 80, 90, 100];
+  const LEVELS = ["S", "A++", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D"];
 
   const rank =
     1 -
