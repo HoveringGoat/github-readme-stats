@@ -75,7 +75,7 @@ const createTextNode = ({
 };
 
 /**
- * Renders the stats card.
+ * Renders the stats card
  *
  * @param {Partial<import('../fetchers/types').StatsData>} stats The stats data.
  * @param {Partial<import("./types").StatCardOptions>} options The card options.
@@ -142,7 +142,7 @@ const renderStatsCard = (stats = {}, options = {}) => {
     translations: statCardLocales({ name, apostrophe }),
   });
 
-  // Meta data for creating text nodes with createTextNode function
+  // Meta data for creating text nodes with createTextNode function 
   const STATS = {};
 
   STATS.stars = {
