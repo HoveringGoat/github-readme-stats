@@ -50,7 +50,7 @@ function calculateRank({
   const PRS_MEDIAN = 50,
     PRS_WEIGHT = 3;
   const ISSUES_MEDIAN = 25,
-    ISSUES_WEIGHT = 0;
+    ISSUES_WEIGHT = 1;
   const REVIEWS_MEDIAN = 2,
     REVIEWS_WEIGHT = 1;
   const STARS_MEDIAN = 50,
