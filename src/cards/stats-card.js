@@ -142,7 +142,7 @@ const renderStatsCard = (stats = {}, options = {}) => {
     translations: statCardLocales({ name, apostrophe }),
   });
 
-  // Meta data for creating text nodes with createTextNode function 
+  // Meta data for creating text nodes with createTextNode function
   const STATS = {};
 
   STATS.stars = {
@@ -374,7 +374,9 @@ const renderStatsCard = (stats = {}, options = {}) => {
     .join(", ");
 
   card.setAccessibilityLabel({
-    title: `${card.title}, Rank: ${rank.level } (${rank.percentile.toFixed(1)}%)`,
+    title: `${card.title}, Rank: ${rank.level} (${rank.percentile.toFixed(
+      1,
+    )}%)`,
     desc: labels,
   });
 
