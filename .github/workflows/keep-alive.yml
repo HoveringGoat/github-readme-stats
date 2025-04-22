@@ -1,26 +1,31 @@
 name: Keep Alive
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 1 * *"
   workflow_dispatch:
+permissions:
+  contents: write
+
 jobs:
-  main-job:
-    name: Main Job
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # - step1
-      # - step 2
-      # - Step N
-  keepalive-job:
-    name: Keepalive Workflow
-    if: ${{ always() }}
-    needs: main-job
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: gautamkrishnar/keepalive-workflow@v2
         with:
-          use_api: false
+          token: ${{ secrets.PAT_TOKEN }}
+      - name: Commit and push workflow changes
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          # Set Git identity using GitHub Actions environment variables
+          git config --global user.name "${{ secrets.GIT_USERNAME }}"
+          git config --global user.email "${{ secrets.GIT_EMAIL }}"
+
+          # Commit the changes
+          git commit -m "Keep Alive" --allow-empty
+
+          # Set the repository remote using the PAT token
+          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
+
+          # Push the changes to the repository
+          git push origin main
