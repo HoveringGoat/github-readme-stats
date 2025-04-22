@@ -28,4 +28,4 @@ jobs:
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
 
           # Push the changes to the repository
-          git push origin main
+          git push origin master
